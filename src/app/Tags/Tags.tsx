@@ -15,7 +15,7 @@ export const Tags = ({ tags, filter, setFilter }: { tags: TagType[], filter : st
       }}
     >
       {tags.map((obj) => (
-        <Tag tag={obj} filter={filter} setFilter={setFilter}/>
+        <Tag tag={obj} filter={filter} setFilter={setFilter} key={obj.id}/>
       ))}
     </div>
   );

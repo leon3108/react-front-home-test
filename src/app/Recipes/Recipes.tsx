@@ -21,7 +21,7 @@ export const Recipes = ({ recipes,filter, setFilter }: { recipes: ListOfRecipes,
         }}
       >
         {recipes.map((obj) => (
-          <Recipe recipe={obj} filter={filter} setFilter={setFilter}/>
+          <Recipe recipe={obj} filter={filter} setFilter={setFilter} key={obj.name}/>
         ))}
       </div>
     </div>
