@@ -25,7 +25,9 @@ import {
 import {
   appetizer,
   autumn,
+  comfort,
   dessert,
+  easy,
   summer,
   vegan,
   winter,
@@ -45,7 +47,7 @@ const cookie: RecipeType = {
     { ingredient: flour, quantity: 300, unit: "g" },
     { ingredient: cream, quantity: 20, unit: "cl" },
   ],
-  tags: [dessert],
+  tags: [dessert, easy],
 };
 
 const pavlova: RecipeType = {
@@ -78,7 +80,7 @@ const fondantChocolat: RecipeType = {
     { ingredient: chocolate, quantity: 200, unit: "g" },
     { ingredient: butter, quantity: 150, unit: "g" },
   ],
-  tags: [dessert, winter],
+  tags: [dessert, winter, comfort],
 };
 
 const pearPie: RecipeType = {
@@ -95,7 +97,7 @@ const pearPie: RecipeType = {
     { ingredient: sugar, quantity: 150, unit: "g" },
     { ingredient: egg, quantity: 2 },
   ],
-  tags: [dessert, autumn],
+  tags: [dessert, autumn, comfort],
 };
 
 const waldorfSalad: RecipeType = {
@@ -112,7 +114,7 @@ const waldorfSalad: RecipeType = {
     },
     { ingredient: feta, quantity: 150, unit: "g" },
   ],
-  tags: [appetizer, summer, vegan],
+  tags: [appetizer, summer, vegan, easy],
 };
 
 export const allRecipes: ListOfRecipes = [

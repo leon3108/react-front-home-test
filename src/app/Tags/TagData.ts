@@ -30,6 +30,26 @@ export const appetizer: TagType = {
   color: "purple",
 };
 
+export const comfort: TagType = {
+  id: "comfort",
+  name: {
+    fr: "PlatRéconfortant",
+    en: "ComfortFood",
+  },
+  type: "plateType",
+  color: "#a1c0bd",
+};
+
+export const easy: TagType = {
+  id: "easy",
+  name: {
+    fr: "facile",
+    en: "easy",
+  },
+  type: "plateType",
+  color: "#a320bd",
+};
+
 export const dessert: TagType = {
   id: "dessert",
   name: {
