@@ -1,22 +1,22 @@
-import { RecipeType } from "./RecipeType";
-import { ListOfRecipes } from "./RecipeType";
+import { ListOfRecipes, RecipeType } from "./RecipeType";
 
 import {
-  sugar,
-  flour,
-  redFruits,
-  chocolate,
-  egg,
-  butter,
   almondPowder,
-  pear,
+  butter,
+  chocolate,
   cream,
-  salad,
   cucumber,
+  egg,
   feta,
+  flour,
+  pear,
+  redFruits,
+  salad,
+  sugar,
 } from "../Ingredients/IngredientData";
 
 import {
+  stepsCookie,
   stepsFondantChocolat,
   stepsPavlova,
   stepsTarteAuxPoires,
@@ -30,6 +30,23 @@ import {
   vegan,
   winter,
 } from "../Tags/TagData";
+
+const cookie: RecipeType = {
+  nom: "Cookie",
+  description: "un cookie est un biscuit américain aux pépites de chocolat",
+  imageURL:
+    "https://imgs.search.brave.com/yXsnpbQbrVJmorAHz3OY24dK5GdmfRQQvVEr6m75plY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM3/OTUxNzI0NS9waG90/by9jaG9jb2xhdGUt/Y2hpcC1jb29raWUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5uREdpSU5pNDMt/RG12QWJ4RUNScE5H/T1c5U0x4emJvTmZJ/REt1ZXpwRXM9",
+  ingredients: [sugar, flour, chocolate, egg, cream],
+  etapes: stepsCookie,
+  ingredientsWithQuantity: [
+    { ingredient: sugar, quantity: 100, unit: "g" },
+    { ingredient: egg, quantity: 3 },
+    { ingredient: chocolate, quantity: 100, unit: "g" },
+    { ingredient: flour, quantity: 300, unit: "g" },
+    { ingredient: cream, quantity: 20, unit: "cl" },
+  ],
+  tags: [dessert],
+};
 
 const pavlova: RecipeType = {
   nom: "Pavlova",

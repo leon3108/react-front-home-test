@@ -8,7 +8,37 @@ import {
   sugar,
 } from "../Ingredients/IngredientData";
 
-import { StepType as StepType } from "./StepType";
+import { StepType } from "./StepType";
+
+
+export const stepsCookie: StepType[] = [
+  {
+    description: "Préparer la pate à cookie.",
+    ingredients: [
+      { ingredient: flour, quantity: 300 },
+      { ingredient: egg, quantity: 3 },
+      { ingredient: cream, quantity: 20 },
+    ],
+    order: 1,
+  },
+  {
+    description: "ajouter le sucre et le chocolat.",
+    ingredients: [
+      { ingredient: sugar, quantity: 50, unit: "g" },
+      { ingredient: chocolate, quantity: 20, unit: "cl" },
+    ],
+
+    order: 2,
+  },
+  {
+    description: "laisser reposer la pate.",
+    order: 3,
+  },
+  {
+    description: "enfourner pendant 30minutes.",
+    order: 4,
+  },
+];
 
 export const stepsPavlova: StepType[] = [
   {
