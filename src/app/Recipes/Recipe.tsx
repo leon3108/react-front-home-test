@@ -4,7 +4,7 @@ import Steps from "../Steps/Steps";
 import { Tags } from "../Tags/Tags";
 import { RecipeType } from "./RecipeType";
 
-export const Recipe = ({ recipe, setFilter }: { recipe: RecipeType, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Recipe = ({ recipe, filter, setFilter }: { recipe: RecipeType, filter: string, setFilter: Dispatch<SetStateAction<string>> }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
 
@@ -50,7 +50,7 @@ export const Recipe = ({ recipe, setFilter }: { recipe: RecipeType, setFilter: D
             justifyContent: "center",
           }}
         >
-          <Tags tags={recipe.tags} setFilter={setFilter}/>
+          <Tags tags={recipe.tags} filter={filter} setFilter={setFilter}/>
         </div>
         <div
           style={{

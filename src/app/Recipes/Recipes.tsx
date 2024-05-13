@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import Recipe from "./Recipe";
 import { ListOfRecipes } from "./RecipeType";
 
-export const Recipes = ({ recipes,setFilter }: { recipes: ListOfRecipes, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Recipes = ({ recipes,filter, setFilter }: { recipes: ListOfRecipes, filter: string, setFilter: Dispatch<SetStateAction<string>> }) => {
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ export const Recipes = ({ recipes,setFilter }: { recipes: ListOfRecipes, setFilt
         }}
       >
         {recipes.map((obj) => (
-          <Recipe recipe={obj} setFilter={setFilter}/>
+          <Recipe recipe={obj} filter={filter} setFilter={setFilter}/>
         ))}
       </div>
     </div>

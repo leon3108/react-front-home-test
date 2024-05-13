@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Dispatch, SetStateAction } from "react";
 import { TagType } from "./TagType";
 
-export const Tag = ({ tag, setFilter }: { tag: TagType, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Tag = ({ tag, filter, setFilter }: { tag: TagType, filter : string, setFilter: Dispatch<SetStateAction<string>> }) => {
+  if (filter !== tag.id)
+    return;
+
   return (
     <Button
       style={{
