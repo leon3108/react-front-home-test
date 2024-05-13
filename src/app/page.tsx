@@ -1,24 +1,25 @@
+"use client"
+
 import { useState } from "react";
-import "./styles.css";
-import Recipes from "./Recipes/Recipes";
 import {
   allRecipes,
-  sugarRecipes,
-  summerRecipes,
+  autumnRecipes,
+  chocolateDessertRecipes,
+  chocolateRecipes,
   dessertRecipes,
   noEggsRecipes,
-  chocolateRecipes,
-  autumnRecipes,
+  sugarRecipes,
+  summerRecipes,
   veganRecipes,
-  chocolateDessertRecipes,
 } from "./Recipes/RecipeData";
+import Recipes from "./Recipes/Recipes";
 import { TagList } from "./Tagfilter/ListeDesTags";
 import { tagList } from "./Tags/TagData";
 
 export default function App() {
   const [filter, setFilter] = useState<string>("all");
   return (
-    <div className="App">
+    <div className="bg-white text-black">
       Liste des recettes
       <TagList tags={tagList} />
       <button onClick={() => setFilter("chocolate")}>Chocolat</button>
