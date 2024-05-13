@@ -1,8 +1,8 @@
-import { RecipeType } from "./RecipeType";
-import Steps from "../Steps/Steps";
-import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
 import { useState } from "react";
+import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
+import Steps from "../Steps/Steps";
 import { Tags } from "../Tags/Tags";
+import { RecipeType } from "./RecipeType";
 
 export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
@@ -36,7 +36,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
           width: "100%",
         }}
       >
-        <h2>Nom de la recette: {recipe.nom}</h2>
+        <h2>Nom de la recette: {recipe.name}</h2>
         <div
           style={{
             padding: "10px",
@@ -92,7 +92,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
               {showSteps ? "Masquer" : "Afficher"}
             </button>
           </div>
-          {recipe.etapes && showSteps && <Steps steps={recipe.etapes} />}
+          {recipe.steps && showSteps && <Steps steps={recipe.steps} />}
         </div>
       </div>
     </div>

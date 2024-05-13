@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { TagType } from "./TagType";
 
 export const Tag = ({ tag }: { tag: TagType }) => {
-  const [selectedTag, setSelectedTag] = useState("");
   return (
     <div
       style={{

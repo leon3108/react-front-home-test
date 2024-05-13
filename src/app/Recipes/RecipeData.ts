@@ -34,12 +34,12 @@ import {
 } from "../Tags/TagData";
 
 const cookie: RecipeType = {
-  nom: "Cookie",
+  name: "Cookie",
   description: "un cookie est un biscuit américain aux pépites de chocolat",
   imageURL:
-    "https://imgs.search.brave.com/yXsnpbQbrVJmorAHz3OY24dK5GdmfRQQvVEr6m75plY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM3/OTUxNzI0NS9waG90/by9jaG9jb2xhdGUt/Y2hpcC1jb29raWUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5uREdpSU5pNDMt/RG12QWJ4RUNScE5H/T1c5U0x4emJvTmZJ/REt1ZXpwRXM9",
+    "https://media.istockphoto.com/id/1182279813/photo/butter-toffee-crunch-chocolate-chip-cookies.jpg?s=2048x2048&w=is&k=20&c=cWzC6xy6rZvsEJ2ZS-z3UG8p5xahwZGS9l74M0kJDmc=",
   ingredients: [sugar, flour, chocolate, egg, cream],
-  etapes: stepsCookie,
+  steps: stepsCookie,
   ingredientsWithQuantity: [
     { ingredient: sugar, quantity: 100, unit: "g" },
     { ingredient: egg, quantity: 3 },
@@ -51,12 +51,12 @@ const cookie: RecipeType = {
 };
 
 const pavlova: RecipeType = {
-  nom: "Pavlova",
+  name: "Pavlova",
   description: "La pavlova est un dessert à base de meringue et de fruits",
   imageURL:
     "https://www.mycake.fr/wp-content/uploads/2019/10/rs_Pavlova_4x3.jpg",
   ingredients: [sugar, flour, redFruits, egg, cream],
-  etapes: stepsPavlova,
+  steps: stepsPavlova,
   ingredientsWithQuantity: [
     { ingredient: sugar, quantity: 100, unit: "g" },
     { ingredient: egg, quantity: 3 },
@@ -67,13 +67,13 @@ const pavlova: RecipeType = {
 };
 
 const fondantChocolat: RecipeType = {
-  nom: "Fondant au chocolat",
+  name: "Fondant au chocolat",
   description:
     "Le fondant au chocolat est un gâteau au chocolat qui fond en bouche",
   imageURL:
     "https://www.guydemarle.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc0ZvIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--333bff76e254e1934153f809f2d9cc2b5967da52/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VWTI5dFltbHVaVjl2Y0hScGIyNXpld2c2QzNKbGMybDZaVWtpRFRZd01IZzJNREJlQmpvR1JWUTZER2R5WVhacGRIbEpJZ3REWlc1MFpYSUdPd2RVT2dsamNtOXdTU0lRTmpBd2VEWXdNQ3N3S3pBR093ZFUiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--929a1958a8630156464b089800ca739f1b4570de/fondant-au-chocolat.jpg",
   ingredients: [chocolate, egg, flour, butter, sugar],
-  etapes: stepsFondantChocolat,
+  steps: stepsFondantChocolat,
   ingredientsWithQuantity: [
     { ingredient: sugar, quantity: 200, unit: "g" },
     { ingredient: flour, quantity: 50, unit: "g" },
@@ -84,13 +84,13 @@ const fondantChocolat: RecipeType = {
 };
 
 const pearPie: RecipeType = {
-  nom: "Tarte amandine aux poires",
+  name: "Tarte amandine aux poires",
   description:
     "La tarte au poire est une tarte faite à base d'un appareil à l'amande, d'une pâte sablée et de poires",
   imageURL:
     "https://assets.afcdn.com/recipe/20201228/116793_w1200h800c1cx1060cy707cxb2121cyb1414.webp",
   ingredients: [almondPowder, sugar, butter, flour, pear],
-  etapes: stepsTarteAuxPoires,
+  steps: stepsTarteAuxPoires,
   ingredientsWithQuantity: [
     { ingredient: pear, quantity: 2 },
     { ingredient: almondPowder, quantity: 50, unit: "g" },
@@ -101,7 +101,7 @@ const pearPie: RecipeType = {
 };
 
 const waldorfSalad: RecipeType = {
-  nom: "Salade Waldorf",
+  name: "Salade Waldorf",
   description: "La salade greque est parfaite pour l'été",
   imageURL:
     "https://assets.afcdn.com/recipe/20190704/94666_w420h420c1cx2689cy1920cxb5378cyb3840.webp",

@@ -6,7 +6,7 @@ export const summer: TagType = {
     fr: "été",
     en: "summer",
   },
-  type: "saison",
+  type: "season",
   color: "yellow",
 };
 
@@ -37,7 +37,7 @@ export const comfort: TagType = {
     en: "ComfortFood",
   },
   type: "plateType",
-  color: "#a1c0bd",
+  color: "grey",
 };
 
 export const easy: TagType = {
@@ -47,7 +47,7 @@ export const easy: TagType = {
     en: "easy",
   },
   type: "plateType",
-  color: "#a320bd",
+  color: "maroon",
 };
 
 export const dessert: TagType = {
@@ -57,7 +57,7 @@ export const dessert: TagType = {
     en: "appetizer",
   },
   type: "plateType",
-  color: "#e320bd",
+  color: "pink",
 };
 
 export const autumn: TagType = {
@@ -66,7 +66,7 @@ export const autumn: TagType = {
     fr: "automne",
     en: "autumn",
   },
-  type: "saison",
+  type: "season",
   color: "orange",
 };
 
@@ -76,7 +76,7 @@ export const winter: TagType = {
     fr: "hiver",
     en: "winter",
   },
-  type: "saison",
+  type: "season",
   color: "blue",
 };
 
