@@ -1,8 +1,10 @@
+import { Button } from "@/components/ui/button";
+import { Dispatch, SetStateAction } from "react";
 import { TagType } from "./TagType";
 
-export const Tag = ({ tag }: { tag: TagType }) => {
+export const Tag = ({ tag, setFilter }: { tag: TagType, setFilter: Dispatch<SetStateAction<string>> }) => {
   return (
-    <div
+    <Button
       style={{
         margin: "10px",
         padding: "5px",
@@ -12,8 +14,10 @@ export const Tag = ({ tag }: { tag: TagType }) => {
         justifyContent: "center",
         backgroundColor: `${tag.color}`
       }}
+      className="text-black"
+      onClick={() => setFilter(tag.id)}
     >
       {tag.name.fr}
-    </div>
+    </Button>
   );
 };
