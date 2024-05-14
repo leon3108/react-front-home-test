@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from 'react';
+import { FilterContext } from '../filterContextProvider';
 import { TagType } from "./TagType";
 
-export const Tag = ({ tag, filter, setFilter }: { tag: TagType, filter : string, setFilter: Dispatch<SetStateAction<string>> }) => {
-  if (filter !== tag.id)
+export const Tag = ({ tag }: { tag: TagType}) => {
+  const filterContext = useContext(FilterContext);
+  if (filterContext === undefined) {
+    return;
+  }
+  const {filter, setFilter} = filterContext;
+  
+  if (!filter.includes(tag.id))
     return;
 
   return (
@@ -18,7 +25,7 @@ export const Tag = ({ tag, filter, setFilter }: { tag: TagType, filter : string,
         backgroundColor: `${tag.color}`
       }}
       className="text-black"
-      onClick={() => setFilter(tag.id)}
+      onClick={() => setFilter([...filter, tag.id])}
     >
       {tag.name.fr}
     </Button>

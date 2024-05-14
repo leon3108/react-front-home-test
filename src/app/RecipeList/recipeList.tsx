@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from 'react';
 import {
   allRecipes,
   appetizerRecipes,
@@ -14,24 +14,31 @@ import {
   winterRecipes
 } from "../Recipes/RecipeData";
 import Recipes from "../Recipes/Recipes";
+import { FilterContext } from '../filterContextProvider';
 
-export default function RecipeList({ filter, setFilter }: { filter: string, setFilter: Dispatch<SetStateAction<string>> }) {
+
+export default function RecipeList() {
+  const filterContext = useContext(FilterContext);
+  if (filterContext === undefined) {
+    return;
+  }
+  const {filter, setFilter} = filterContext;
   return (
   <section>
-      {filter === "all" && <Recipes recipes={allRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "sugar" && <Recipes recipes={sugarRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "summer" && <Recipes recipes={summerRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "dessert" && <Recipes recipes={dessertRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "chocolateDessert" && (
-        <Recipes recipes={chocolateDessertRecipes} filter={filter} setFilter={setFilter}/>
+      {filter.length === 0 && <Recipes recipes={allRecipes}/>}
+      {filter.includes("sugar") && <Recipes recipes={sugarRecipes}/>}
+      {filter.includes("summer") && <Recipes recipes={summerRecipes}/>}
+      {filter.includes("dessert") && <Recipes recipes={dessertRecipes}/>}
+      {filter.includes("chocolateDessert") && (
+        <Recipes recipes={chocolateDessertRecipes}/>
       )}
-      {filter === "eggs free" && <Recipes recipes={noEggsRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "autumn" && <Recipes recipes={autumnRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "vegan" && <Recipes recipes={veganRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "winter" && <Recipes recipes={winterRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "appetizer" && <Recipes recipes={appetizerRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "easy" && <Recipes recipes={easyRecipes} filter={filter} setFilter={setFilter}/>}
-      {filter === "comfort" && <Recipes recipes={comfortRecipes} filter={filter} setFilter={setFilter}/>}
+      {filter.includes("eggs free") && <Recipes recipes={noEggsRecipes}/>}
+      {filter.includes("autumn") && <Recipes recipes={autumnRecipes}/>}
+      {filter.includes("vegan") && <Recipes recipes={veganRecipes}/>}
+      {filter.includes("winter") && <Recipes recipes={winterRecipes}/>}
+      {filter.includes("appetizer") && <Recipes recipes={appetizerRecipes}/>}
+      {filter.includes("easy") && <Recipes recipes={easyRecipes}/>}
+      {filter.includes("comfort") && <Recipes recipes={comfortRecipes}/>}
   </section>
   )
 }

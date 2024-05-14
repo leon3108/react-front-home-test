@@ -1,12 +1,19 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useContext, useState } from "react";
 import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
 import Steps from "../Steps/Steps";
 import { Tags } from "../Tags/Tags";
+import { FilterContext } from '../filterContextProvider';
 import { RecipeType } from "./RecipeType";
 
-export const Recipe = ({ recipe, filter, setFilter }: { recipe: RecipeType, filter: string, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
+  const filterContext = useContext(FilterContext);
+  if (filterContext === undefined) {
+    return;
+  }
+  const {filter, setFilter} = filterContext;
+
   return (
     <div
       style={{
@@ -49,7 +56,7 @@ export const Recipe = ({ recipe, filter, setFilter }: { recipe: RecipeType, filt
             justifyContent: "center",
           }}
         >
-          <Tags tags={recipe.tags} filter={filter} setFilter={setFilter}/>
+          <Tags tags={recipe.tags}/>
         </div>
         <div
           style={{

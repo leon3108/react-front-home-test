@@ -1,8 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
 import { Tag } from "./Tag";
 import { TagType } from "./TagType";
 
-export const Tags = ({ tags, filter, setFilter }: { tags: TagType[], filter : string, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Tags = ({ tags}: { tags: TagType[]}) => {
   return (
     <div
       style={{
@@ -15,7 +14,7 @@ export const Tags = ({ tags, filter, setFilter }: { tags: TagType[], filter : st
       }}
     >
       {tags.map((obj) => (
-        <Tag tag={obj} filter={filter} setFilter={setFilter} key={obj.id}/>
+        <Tag tag={obj} key={obj.id}/>
       ))}
     </div>
   );

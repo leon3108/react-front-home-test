@@ -1,8 +1,14 @@
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from 'react';
+import { FilterContext } from '../filterContextProvider';
 import Recipe from "./Recipe";
 import { ListOfRecipes } from "./RecipeType";
 
-export const Recipes = ({ recipes,filter, setFilter }: { recipes: ListOfRecipes, filter: string, setFilter: Dispatch<SetStateAction<string>> }) => {
+export const Recipes = ({ recipes}: { recipes: ListOfRecipes }) => {
+  const filterContext = useContext(FilterContext);
+  if (filterContext === undefined) {
+    return;
+  }
+  const {filter, setFilter} = filterContext;
   return (
     <div
       style={{
@@ -21,7 +27,7 @@ export const Recipes = ({ recipes,filter, setFilter }: { recipes: ListOfRecipes,
         }}
       >
         {recipes.map((obj) => (
-          <Recipe recipe={obj} filter={filter} setFilter={setFilter} key={obj.name}/>
+          <Recipe recipe={obj} key={obj.name}/>
         ))}
       </div>
     </div>
