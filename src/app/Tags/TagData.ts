@@ -33,11 +33,31 @@ export const appetizer: TagType = {
 export const comfort: TagType = {
   id: "comfort",
   name: {
-    fr: "PlatRéconfortant",
-    en: "ComfortFood",
+    fr: "Réconfortant",
+    en: "Comfort",
   },
   type: "plateType",
   color: "grey",
+};
+
+export const sugarType: TagType = {
+  id: "sugar",
+  name: {
+    fr: "sucre",
+    en: "sugar",
+  },
+  type: "plateType",
+  color: "grey",
+};
+
+export const chocolateDessert: TagType = {
+  id: "chocolateDessert",
+  name: {
+    fr: "dessert au chocolat",
+    en: "chocolateDessert",
+  },
+  type: "plateType",
+  color: "blue",
 };
 
 export const easy: TagType = {
@@ -80,6 +100,18 @@ export const winter: TagType = {
   color: "blue",
 };
 
+export const eggsFree: TagType = {
+  id: "eggs free",
+  name: {
+    fr: "sans oeufs",
+    en: "eggs free",
+  },
+  type: "season",
+  color: "blue",
+};
+
+
+
 export const tagList: TagType[] = [
   summer,
   winter,
@@ -87,4 +119,9 @@ export const tagList: TagType[] = [
   appetizer,
   autumn,
   vegan,
+  easy,
+  comfort,
+  chocolateDessert,
+  sugarType,
+  eggsFree,
 ];

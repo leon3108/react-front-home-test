@@ -25,9 +25,12 @@ import {
 import {
   appetizer,
   autumn,
+  chocolateDessert,
   comfort,
   dessert,
   easy,
+  eggsFree,
+  sugarType,
   summer,
   vegan,
   winter,
@@ -47,7 +50,7 @@ const cookie: RecipeType = {
     { ingredient: flour, quantity: 300, unit: "g" },
     { ingredient: cream, quantity: 20, unit: "cl" },
   ],
-  tags: [dessert, easy],
+  tags: [dessert, easy, chocolateDessert, sugarType],
 };
 
 const pavlova: RecipeType = {
@@ -63,7 +66,7 @@ const pavlova: RecipeType = {
     { ingredient: redFruits, quantity: 100, unit: "g" },
     { ingredient: cream, quantity: 20, unit: "cl" },
   ],
-  tags: [summer, dessert],
+  tags: [summer, dessert, sugarType],
 };
 
 const fondantChocolat: RecipeType = {
@@ -80,7 +83,7 @@ const fondantChocolat: RecipeType = {
     { ingredient: chocolate, quantity: 200, unit: "g" },
     { ingredient: butter, quantity: 150, unit: "g" },
   ],
-  tags: [dessert, winter, comfort],
+  tags: [dessert, winter, comfort, chocolateDessert, sugarType],
 };
 
 const pearPie: RecipeType = {
@@ -97,7 +100,7 @@ const pearPie: RecipeType = {
     { ingredient: sugar, quantity: 150, unit: "g" },
     { ingredient: egg, quantity: 2 },
   ],
-  tags: [dessert, autumn, comfort],
+  tags: [dessert, autumn, comfort, sugarType, eggsFree],
 };
 
 const waldorfSalad: RecipeType = {
@@ -114,10 +117,11 @@ const waldorfSalad: RecipeType = {
     },
     { ingredient: feta, quantity: 150, unit: "g" },
   ],
-  tags: [appetizer, summer, vegan, easy],
+  tags: [appetizer, summer, vegan, easy, eggsFree],
 };
 
 export const allRecipes: ListOfRecipes = [
+  cookie,
   pavlova,
   fondantChocolat,
   pearPie,
@@ -176,4 +180,24 @@ export const autumnRecipes: RecipeType[] = allRecipes.filter((recette) => {
 export const veganRecipes: RecipeType[] = allRecipes.filter((recette) => {
   const tagIds: string[] = recette.tags.map((tag) => tag.id);
   return tagIds.includes("vegan");
+});
+
+export const winterRecipes: RecipeType[] = allRecipes.filter((recette) => {
+  const tagIds: string[] = recette.tags.map((tag) => tag.id);
+  return tagIds.includes("winter");
+});
+
+export const appetizerRecipes: RecipeType[] = allRecipes.filter((recette) => {
+  const tagIds: string[] = recette.tags.map((tag) => tag.id);
+  return tagIds.includes("appetizer");
+});
+
+export const easyRecipes: RecipeType[] = allRecipes.filter((recette) => {
+  const tagIds: string[] = recette.tags.map((tag) => tag.id);
+  return tagIds.includes("easy");
+});
+
+export const comfortRecipes: RecipeType[] = allRecipes.filter((recette) => {
+  const tagIds: string[] = recette.tags.map((tag) => tag.id);
+  return tagIds.includes("comfort");
 });

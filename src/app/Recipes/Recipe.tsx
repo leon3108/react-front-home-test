@@ -7,7 +7,6 @@ import { RecipeType } from "./RecipeType";
 export const Recipe = ({ recipe, filter, setFilter }: { recipe: RecipeType, filter: string, setFilter: Dispatch<SetStateAction<string>> }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
-
   return (
     <div
       style={{
