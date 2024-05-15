@@ -3,16 +3,7 @@ import { TagType } from "./TagType";
 
 export const Tags = ({ tags}: { tags: TagType[]}) => {
   return (
-    <div
-      style={{
-        margin: "10px",
-        padding: "5px",
-        borderRadius: "3px",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-      }}
-    >
+    <div className="mx-3 p-1 border-2 flex flex-row justify-center">
       {tags.map((obj) => (
         <Tag tag={obj} key={obj.id}/>
       ))}

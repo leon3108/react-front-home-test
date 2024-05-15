@@ -7,10 +7,7 @@ export const IngredientWithQuantity = ({
   ingredientWithQuantity: IngredientWithQuantityType;
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-      }}
+    <div className="flex"
     >
       {ingredientWithQuantity.quantity}
       {ingredientWithQuantity.unit}

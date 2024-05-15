@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
-import Steps from "../Steps/Steps";
-import { Tags } from "../Tags/Tags";
+import { useContext, useState } from 'react';
+import IngredientsWithQuantity from '../Ingredients/IngredientsWithQuantity';
+import Steps from '../Steps/Steps';
+import { Tags } from '../Tags/Tags';
 import { FilterContext } from '../filterContextProvider';
-import { RecipeType } from "./RecipeType";
+import { RecipeType } from './RecipeType';
 
 export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
@@ -12,64 +12,26 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   if (filterContext === undefined) {
     return;
   }
-  const {filter, setFilter} = filterContext;
+  const { filter, setFilter } = filterContext;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        padding: "10px",
-        boxShadow: "5px 5px 7px 2px rgba(0,0,0,0.76)",
-        marginTop: "20px",
-      }}
-    >
+    <div className='flex flex-row p-3 shadow-[5px_5px_7px_2px_rgba(0,0,0,0.76)] mt-5 '>
       <div
+        className={`flex flex-col justify-evenly h-52 w-2/3 bg-cover `}
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-          height: "200px",
-          width: "70%",
           backgroundImage: `url(${recipe.imageURL})`,
-          backgroundSize: "cover",
         }}
       ></div>
-      <div
-        style={{
-          padding: "10px",
-          backgroundColor: "lightblue",
-          width: "100%",
-        }}
-      >
+      <div className='p-3 w-full bg-lightBlue'>
         <h2>Nom de la recette: {recipe.name}</h2>
-        <div
-          style={{
-            padding: "10px",
-          }}
-        >
-          {recipe.description}
+        <div className='p-3'>{recipe.description}</div>
+        <div className='flex justify-center'>
+          <Tags tags={recipe.tags} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Tags tags={recipe.tags}/>
-        </div>
-        <div
-          style={{
-            backgroundColor: "blanchedalmond",
-            padding: "10px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-          }}
-        >
+        <div className='p-3 flex flex-col items-start bg-blanchedalmond'>
           Ingrédients:
           <button onClick={() => setShowIngredients(!showIngredients)}>
-            {showIngredients ? "Masquer" : "Afficher"}
+            {showIngredients ? 'Masquer' : 'Afficher'}
           </button>
           {showIngredients && (
             <IngredientsWithQuantity
@@ -77,25 +39,11 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
             />
           )}
         </div>
-        <div
-          style={{
-            padding: "10px",
-            display: "flex",
-            flexDirection: "column",
-            alignContent: "flex-start",
-            alignItems: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              padding: "10px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
+        <div className='p-3 flex flex-col items-start justify-start'>
+          <div className='p-3 flex flex-col'>
             Etapes de la recette:
             <button onClick={() => setShowSteps(!showSteps)}>
-              {showSteps ? "Masquer" : "Afficher"}
+              {showSteps ? 'Masquer' : 'Afficher'}
             </button>
           </div>
           {recipe.steps && showSteps && <Steps steps={recipe.steps} />}

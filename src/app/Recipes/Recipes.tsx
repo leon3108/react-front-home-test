@@ -11,21 +11,9 @@ export const Recipes = ({ recipes}: { recipes: ListOfRecipes }) => {
   const {filter, setFilter} = filterContext;
   return (
     <div
-      style={{
-        padding: "10px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
+    className='p-3 flex flex-col items-center '
     >
-      <div
-        style={{
-          backgroundColor: "whitesmoke",
-          borderWidth: "10px",
-          borderColor: "black",
-          maxWidth: "800px",
-        }}
-      >
+      <div className='border-8 border-black max-w-3xl bg-whitesmoke'>
         {recipes.map((obj) => (
           <Recipe recipe={obj} key={obj.name}/>
         ))}
