@@ -1,18 +1,12 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import IngredientsWithQuantity from '../Ingredients/IngredientsWithQuantity';
 import Steps from '../Steps/Steps';
 import { Tags } from '../Tags/Tags';
-import { FilterContext } from '../filterContextProvider';
 import { RecipeType } from './RecipeType';
 
 export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
-  const filterContext = useContext(FilterContext);
-  if (filterContext === undefined) {
-    return;
-  }
-  const { filter, setFilter } = filterContext;
 
   return (
     <div className='flex flex-row p-3 shadow-[5px_5px_7px_2px_rgba(0,0,0,0.76)] mt-5 '>
