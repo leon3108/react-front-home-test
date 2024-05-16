@@ -1,8 +1,6 @@
 "use client"
 
 import RecipeList from "./RecipeList/recipeList";
-import { tagList } from "./Tags/TagData";
-import { Tags } from "./Tags/Tags";
 import { FilterContextProvider } from "./filterContextProvider";
 import Title from "./title";
 import UpdateFilter from "./updateFilter";
@@ -12,9 +10,14 @@ export default function App() {
     <main className="bg-white text-black">
       <FilterContextProvider>
         <Title/>
-        <Tags tags={tagList}/>
-        <UpdateFilter />
-        <RecipeList/>
+        <div className="flex">
+          <div className="w-52 h-full bg-gray-200 fixed top-0 left-0 overflow-y-auto">
+            <UpdateFilter />
+          </div>
+          <div className="flex-grow flex items-center justify-center">
+            <RecipeList />
+          </div>
+        </div>
       </FilterContextProvider>
     </main>
   );
