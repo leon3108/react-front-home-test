@@ -1,11 +1,11 @@
+import { TagType } from '@/tags/TagType';
 import { cx } from 'class-variance-authority';
-import { TagType } from './TagType';
 
 export const Tag = ({ tag }: { tag: TagType }) => {
   return (
     <div
       className={cx(
-        'text-black mx-3 p-1 flex flex-row justify-center rounded-sm',
+        'mx-3 flex flex-row justify-center rounded-sm p-1 text-black',
         `bg-[${tag.color}]`
       )}
     >

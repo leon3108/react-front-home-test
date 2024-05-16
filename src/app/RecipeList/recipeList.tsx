@@ -1,8 +1,8 @@
 'use client';
 
+import Recipe from '@/recipes/Recipe';
+import { allRecipes } from '@/recipes/RecipeData';
 import { useContext } from 'react';
-import Recipe from '../Recipes/Recipe';
-import { allRecipes } from '../Recipes/RecipeData';
 import { FilterContext } from '../filterContextProvider';
 
 export default function RecipeList() {

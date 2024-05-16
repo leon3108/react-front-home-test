@@ -4,7 +4,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -13,14 +12,14 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import IngredientsWithQuantity from '@/ingredients/IngredientsWithQuantity';
+import placeholderImage from '@/public/placeholder.jpg';
+import { RecipeType } from '@/recipes/RecipeType';
+import Steps from '@/steps/Steps';
+import { Tags } from '@/tags/Tags';
 import { Eye, EyeOff } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
-import placeholderImage from '../../../public/placeholder.jpg';
-import IngredientsWithQuantity from '../Ingredients/IngredientsWithQuantity';
-import Steps from '../Steps/Steps';
-import { Tags } from '../Tags/Tags';
-import { RecipeType } from './RecipeType';
 
 export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
@@ -86,7 +85,6 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
           </div>
         </div>
       </CardContent>
-      <CardFooter></CardFooter>
     </Card>
   );
 };

@@ -17,8 +17,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"],
+      "@/public/*": ["public/*"],
+      "@/ingredients/*": ["src/app/Ingredients/*"],
+      "@/recipeList/*": ["src/app/RecipeList/*"],
+      "@/recipes/*": ["src/app/Recipes/*"],
+      "@/steps/*": ["src/app/Steps/*"],
+      "@/tags/*": ["src/app/Tags/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
