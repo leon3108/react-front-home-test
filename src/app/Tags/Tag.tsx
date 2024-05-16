@@ -1,31 +1,43 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
+import { cx } from 'class-variance-authority';
 import { useContext } from 'react';
 import { FilterContext } from '../filterContextProvider';
-import { TagType } from "./TagType";
+import { TagType } from './TagType';
 
-export const Tag = ({ tag }: { tag: TagType}) => {
+const shouldShowTag = (filter: string[], tag: TagType) => {
+  if (!filter.includes(tag.id) && filter.length != 0) {
+    return false;
+  }
+  return true;
+};
+
+export const Tag = ({ tag }: { tag: TagType }) => {
   const filterContext = useContext(FilterContext);
   if (filterContext === undefined) {
     return;
   }
-  const {filter, setFilter} = filterContext;
-  
-  if (!filter.includes(tag.id))
+  const { filter, setFilter } = filterContext;
+
+  if (!shouldShowTag(filter, tag)) {
     return;
+  }
 
   const handleClick = () => {
     if (filter.includes(tag.id)) {
       // const newFilter = filter.fonction qui boucle et qui retourne l'array (element => {element != tag.id})
       // setFilter(newFilter);
-      console.log("WIP : tag.id deleted")
+      console.log('WIP : tag.id deleted');
     } else {
-      setFilter([...filter, tag.id])
-    } 
-  }
+      setFilter([...filter, tag.id]);
+    }
+  };
 
   return (
     <Button
-      className={`text-black m-3 p-1 flex flex-row justify-center bg-[${tag.color}] rounded-sm`}
+      className={cx(
+        'text-black m-3 p-1 flex flex-row justify-center rounded-sm',
+        `bg-[${tag.color}]`
+      )}
       onClick={handleClick}
     >
       {tag.name.fr}
