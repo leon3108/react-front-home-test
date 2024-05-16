@@ -23,9 +23,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
         <CardTitle>{recipe.name}</CardTitle>
         <CardDescription className='p-3'> {recipe.description}</CardDescription>
       </CardHeader>
-      <div className='flex justify-center'>
-        <Tags tags={recipe.tags} />
-      </div>
+      <Tags tags={recipe.tags} />
       <CardContent className='flex flex-row space-x-2'>
         <Image
           className={`flex flex-col justify-evenly h-52 w-2/3 bg-cover `}
