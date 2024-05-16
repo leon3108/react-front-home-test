@@ -1,15 +1,17 @@
-import { IngredientType } from "./IngredientType";
-import Ingredient from "./Ingredient";
+import Ingredient from './Ingredient';
+import { IngredientType } from './IngredientType';
 
 export const Ingredients = ({
-  ingredients
+  ingredients,
 }: {
   ingredients?: IngredientType[];
 }) => {
   return (
     <>
       {ingredients &&
-        ingredients.map((ingredient) => <Ingredient ingredient={ingredient} />)}
+        ingredients.map((ingredient) => (
+          <Ingredient ingredient={ingredient} key={ingredient.name} />
+        ))}
     </>
   );
 };
