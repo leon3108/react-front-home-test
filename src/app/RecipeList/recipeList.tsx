@@ -1,8 +1,8 @@
 'use client';
 
 import { useContext } from 'react';
+import Recipe from '../Recipes/Recipe';
 import { allRecipes } from '../Recipes/RecipeData';
-import Recipes from '../Recipes/Recipes';
 import { FilterContext } from '../filterContextProvider';
 
 export default function RecipeList() {
@@ -18,5 +18,11 @@ export default function RecipeList() {
     return filter.every((tag) => ids.includes(tag));
   });
 
-  return <section>{<Recipes recipes={filteredRecipes} />}</section>;
+  return (
+    <section className='flex flex-grow flex-col items-center p-3 lg:ml-10 xl:justify-center '>
+      {filteredRecipes.map((obj) => (
+        <Recipe recipe={obj} key={obj.name} />
+      ))}
+    </section>
+  );
 }

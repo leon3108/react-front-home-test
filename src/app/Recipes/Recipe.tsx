@@ -26,22 +26,25 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
 
   return (
-    <Card className='flex flex-col p-3 mt-5 '>
+    <Card className='mt-5 flex flex-col p-3 md:w-[600px]'>
       <CardHeader>
         <CardTitle>{recipe.name}</CardTitle>
-        <CardDescription className='p-3'> {recipe.description}</CardDescription>
+        <CardDescription className='text-wrap p-3'>
+          {' '}
+          {recipe.description}
+        </CardDescription>
       </CardHeader>
       <Tags tags={recipe.tags} />
       <CardContent className='flex flex-row space-x-2'>
         <Image
-          className={`flex flex-col justify-evenly h-52 w-2/3 bg-cover `}
+          className={`hidden h-52 w-2/3 flex-col justify-evenly bg-cover sm:flex`}
           src={recipe.imageURL}
           alt={recipe.name}
           width={500}
           height={300}
         />
-        <div className='p-3 w-full rounded-md bg-fire-bush-200'>
-          <div className='p-3 flex flex-col items-start rounded-sm bg-fire-bush-100'>
+        <div className='w-full rounded-md bg-fire-bush-200 p-3'>
+          <div className='flex flex-col items-start rounded-sm bg-fire-bush-100 p-3'>
             <Collapsible>
               <div className='flex space-x-2'>
                 <p>Ingrédients:</p>
@@ -62,7 +65,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
               </CollapsibleContent>
             </Collapsible>
           </div>
-          <div className='p-3 flex flex-col items-start justify-start '>
+          <div className='flex flex-col items-start justify-start p-3 '>
             <Collapsible>
               <div className='flex space-x-2 bg-fire-bush-200'>
                 <p>Etapes de la recette:</p>

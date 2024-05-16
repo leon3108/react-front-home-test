@@ -68,19 +68,22 @@ export default function UpdateFilter() {
     }
   };
   return (
-    <section className='flex flex-col justify-center mt-5 px-4 space-y-2'>
+    <section className=' flex h-full w-full flex-col justify-start space-y-2 overflow-y-auto bg-fire-bush-50 p-4 sm:px-10 md:px-20 lg:fixed lg:left-0 lg:top-0 lg:w-52 lg:px-4 '>
       <h3 className='text-lg font-bold'>Tags :</h3>
-      {checkboxList.map((checkbox) => (
-        <Checkbox
-          key={checkbox.tag}
-          id={`${checkbox.tag}Checkbox`}
-          onCheckedChange={(checked) =>
-            handleCheckedChange(checked, checkbox.tag)
-          }
-          tag={checkbox.tag}
-          label={checkbox.label}
-        />
-      ))}
+      <div className='flex w-full flex-row flex-wrap justify-center lg:flex-col lg:flex-nowrap lg:space-y-2'>
+        {checkboxList.map((checkbox) => (
+          <Checkbox
+            className='mb-1 ml-1 lg:mb-0 lg:ml-0'
+            key={checkbox.tag}
+            id={`${checkbox.tag}Checkbox`}
+            onCheckedChange={(checked) =>
+              handleCheckedChange(checked, checkbox.tag)
+            }
+            tag={checkbox.tag}
+            label={checkbox.label}
+          />
+        ))}
+      </div>
     </section>
   );
 }
