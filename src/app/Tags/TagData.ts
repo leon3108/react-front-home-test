@@ -7,7 +7,6 @@ export const summer: TagType = {
     en: "summer",
   },
   type: "season",
-  color: "#FFFF00",
 };
 
 export const vegan: TagType = {
@@ -17,7 +16,6 @@ export const vegan: TagType = {
     en: "vegan",
   },
   type: "diet",
-  color: "#008000",
 };
 
 export const appetizer: TagType = {
@@ -27,7 +25,6 @@ export const appetizer: TagType = {
     en: "appetizer",
   },
   type: "plateType",
-  color: "#800080",
 };
 
 export const comfort: TagType = {
@@ -37,7 +34,6 @@ export const comfort: TagType = {
     en: "Comfort",
   },
   type: "plateType",
-  color: "#808080",
 };
 
 export const sugarType: TagType = {
@@ -47,7 +43,6 @@ export const sugarType: TagType = {
     en: "sugar",
   },
   type: "plateType",
-  color: "#808080",
 };
 
 export const chocolateDessert: TagType = {
@@ -57,7 +52,6 @@ export const chocolateDessert: TagType = {
     en: "chocolateDessert",
   },
   type: "plateType",
-  color: "#0000ff",
 };
 
 export const easy: TagType = {
@@ -67,7 +61,6 @@ export const easy: TagType = {
     en: "easy",
   },
   type: "plateType",
-  color: "#582900",
 };
 
 export const dessert: TagType = {
@@ -77,7 +70,6 @@ export const dessert: TagType = {
     en: "appetizer",
   },
   type: "plateType",
-  color: "#FFC0CB",
 };
 
 export const autumn: TagType = {
@@ -87,7 +79,6 @@ export const autumn: TagType = {
     en: "autumn",
   },
   type: "season",
-  color: "#ED7F10",
 };
 
 export const winter: TagType = {
@@ -97,7 +88,6 @@ export const winter: TagType = {
     en: "winter",
   },
   type: "season",
-  color: "#0000ff",
 };
 
 export const eggsFree: TagType = {
@@ -107,7 +97,6 @@ export const eggsFree: TagType = {
     en: "eggs free",
   },
   type: "season",
-  color: "#0000ff",
 };
 
 

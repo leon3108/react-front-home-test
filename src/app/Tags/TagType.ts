@@ -7,5 +7,4 @@ export type TagType = {
   id: string;
   type: string;
   name: Translation;
-  color: string;
 };
