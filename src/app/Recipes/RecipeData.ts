@@ -1,4 +1,4 @@
-import { ListOfRecipes, RecipeType } from "./RecipeType";
+import { RecipeType } from "./RecipeType";
 
 import {
   almondPowder,
@@ -120,7 +120,7 @@ const waldorfSalad: RecipeType = {
   tags: [appetizer, summer, vegan, easy, eggsFree],
 };
 
-export const allRecipes: ListOfRecipes = [
+export const allRecipes: RecipeType[] = [
   cookie,
   pavlova,
   fondantChocolat,
