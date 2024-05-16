@@ -4,7 +4,8 @@ import { StepType } from './StepType';
 export const Steps = ({ steps }: { steps: StepType[] }) => {
   return (
     <>
-      {steps && steps.map((obj) => <Step etape={obj} key={obj.description} />)}
+      {steps &&
+        steps.map((step) => <Step etape={step} key={step.description} />)}
     </>
   );
 };
