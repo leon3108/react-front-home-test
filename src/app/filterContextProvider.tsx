@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useState } from 'react';
 
 interface FilterContextType {
@@ -8,7 +10,9 @@ interface FilterContextType {
 const FilterContext = createContext<FilterContextType | undefined>(undefined);
 
 // Fournisseur du contexte
-const FilterContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const FilterContextProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [filter, setFilter] = useState<string[]>([]);
 
   return (

@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import { allRecipes } from '../Recipes/RecipeData';
 import Recipes from '../Recipes/Recipes';
