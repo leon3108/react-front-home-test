@@ -8,6 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import { Eye, EyeOff } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import IngredientsWithQuantity from '../Ingredients/IngredientsWithQuantity';
@@ -36,24 +42,42 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
         />
         <div className='p-3 w-full bg-lightBlue'>
           <div className='p-3 flex flex-col items-start bg-blanchedalmond'>
-            Ingrédients:
-            <button onClick={() => setShowIngredients(!showIngredients)}>
-              {showIngredients ? 'Masquer' : 'Afficher'}
-            </button>
-            {showIngredients && (
-              <IngredientsWithQuantity
-                ingredientsWithQuantity={recipe.ingredientsWithQuantity}
-              />
-            )}
+            <Collapsible>
+              <div className='flex space-x-2'>
+                <p>Ingrédients:</p>
+                <CollapsibleTrigger>
+                  {showIngredients ? (
+                    <EyeOff
+                      onClick={() => setShowIngredients(!showIngredients)}
+                    />
+                  ) : (
+                    <Eye onClick={() => setShowIngredients(!showIngredients)} />
+                  )}
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent>
+                <IngredientsWithQuantity
+                  ingredientsWithQuantity={recipe.ingredientsWithQuantity}
+                />
+              </CollapsibleContent>
+            </Collapsible>
           </div>
           <div className='p-3 flex flex-col items-start justify-start'>
-            <div className='p-3 flex flex-col'>
-              Etapes de la recette:
-              <button onClick={() => setShowSteps(!showSteps)}>
-                {showSteps ? 'Masquer' : 'Afficher'}
-              </button>
-            </div>
-            {recipe.steps && showSteps && <Steps steps={recipe.steps} />}
+            <Collapsible>
+              <div className='flex space-x-2'>
+                <p>Etapes de la recette:</p>
+                <CollapsibleTrigger>
+                  {showSteps ? (
+                    <EyeOff onClick={() => setShowSteps(!showSteps)} />
+                  ) : (
+                    <Eye onClick={() => setShowSteps(!showSteps)} />
+                  )}
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent>
+                {recipe.steps && <Steps steps={recipe.steps} />}
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </div>
       </CardContent>

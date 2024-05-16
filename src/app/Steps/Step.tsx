@@ -3,7 +3,7 @@ import { StepType } from './StepType';
 
 export const Step = ({ etape }: { etape: StepType }) => {
   return (
-    <div className='flex flex-col justify-start p-3 text-left bg-thistle'>
+    <div className='flex flex-col justify-start p-3 text-left'>
       <div>
         {etape.order}. {etape.description}
       </div>
