@@ -19,6 +19,19 @@ const config = {
     },
     extend: {
       colors: {
+        'fire-bush': {
+          '50': '#fdf8ed',
+          '100': '#f9eacc',
+          '200': '#f2d295',
+          '300': '#ebb65e',
+          '400': '#e69f3d',
+          '500': '#de7d22',
+          '600': '#c45e1b',
+          '700': '#a3421a',
+          '800': '#85341b',
+          '900': '#6e2c19',
+          '950': '#3e150a',
+      },
         lightBlue: "#ADD8E6",
         blanchedalmond: "#FFEBCD",
         whitesmoke: "#f5f5f5",

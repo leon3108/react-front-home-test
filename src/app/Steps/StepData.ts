@@ -2,9 +2,12 @@ import {
   butter,
   chocolate,
   cream,
+  cucumber,
   egg,
+  feta,
   flour,
   redFruits,
+  salad,
   sugar,
 } from "../Ingredients/IngredientData";
 
@@ -131,5 +134,29 @@ export const stepsTarteAuxPoires: StepType[] = [
     description:
       "Verser la préparation sur le fond de la pâte. Disposer les poires. Enfourner 50 mn à 180°",
     order: 5,
+  },
+];
+
+export const stepsSalad: StepType[] = [
+  {
+    description: "Laver la salade",
+    order: 1,
+    ingredients: [
+      { ingredient: salad, quantity:1 },
+    ],
+  },
+  {
+    description:
+      "Couper le comcombre et la feta en petit bout.",
+    order: 3,
+    ingredients: [
+      { ingredient: cucumber, quantity: 1 },
+      { ingredient: feta, quantity: 150, unit: "g" },
+    ],
+  },
+  {
+    description:
+      "Ajouter les ingrédients dans un saladier et mélanger.",
+    order: 4,
   },
 ];

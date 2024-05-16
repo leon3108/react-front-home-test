@@ -26,7 +26,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
 
   return (
-    <Card className='flex flex-col p-3 shadow-[5px_5px_7px_2px_rgba(0,0,0,0.76)] mt-5 '>
+    <Card className='flex flex-col p-3 mt-5 '>
       <CardHeader>
         <CardTitle>{recipe.name}</CardTitle>
         <CardDescription className='p-3'> {recipe.description}</CardDescription>
@@ -40,8 +40,8 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
           width={500}
           height={300}
         />
-        <div className='p-3 w-full bg-lightBlue'>
-          <div className='p-3 flex flex-col items-start bg-blanchedalmond'>
+        <div className='p-3 w-full rounded-md bg-fire-bush-200'>
+          <div className='p-3 flex flex-col items-start rounded-sm bg-fire-bush-100'>
             <Collapsible>
               <div className='flex space-x-2'>
                 <p>Ingrédients:</p>
@@ -62,9 +62,9 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
               </CollapsibleContent>
             </Collapsible>
           </div>
-          <div className='p-3 flex flex-col items-start justify-start'>
+          <div className='p-3 flex flex-col items-start justify-start '>
             <Collapsible>
-              <div className='flex space-x-2'>
+              <div className='flex space-x-2 bg-fire-bush-200'>
                 <p>Etapes de la recette:</p>
                 <CollapsibleTrigger>
                   {showSteps ? (

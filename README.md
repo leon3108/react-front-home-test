@@ -34,5 +34,6 @@ To run this project you will need to install yarn and npm
 
 # Run the project
 
-To Install dependencies & node modules, run : `yarn`
-To launch the project, run : `yarn start`
+To Install dependencies & node modules, run : `pnpm install`
+
+To launch the project, run : `pnpm run dev`

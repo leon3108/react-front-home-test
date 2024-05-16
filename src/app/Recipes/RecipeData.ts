@@ -19,6 +19,7 @@ import {
   stepsCookie,
   stepsFondantChocolat,
   stepsPavlova,
+  stepsSalad,
   stepsTarteAuxPoires,
 } from "../Steps/StepData";
 
@@ -109,6 +110,7 @@ const waldorfSalad: RecipeType = {
   imageURL:
     "https://assets.afcdn.com/recipe/20190704/94666_w420h420c1cx2689cy1920cxb5378cyb3840.webp",
   ingredients: [salad, cucumber, feta],
+  steps: stepsSalad,
   ingredientsWithQuantity: [
     { ingredient: salad, quantity: 1 },
     {

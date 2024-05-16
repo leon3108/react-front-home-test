@@ -1,5 +1,5 @@
-import Ingredient from "./Ingredient";
-import { IngredientWithQuantityType } from "./IngredientWithQuantityType";
+import Ingredient from './Ingredient';
+import { IngredientWithQuantityType } from './IngredientWithQuantityType';
 
 export const IngredientWithQuantity = ({
   ingredientWithQuantity,
@@ -7,8 +7,7 @@ export const IngredientWithQuantity = ({
   ingredientWithQuantity: IngredientWithQuantityType;
 }) => {
   return (
-    <div className="flex"
-    >
+    <div className="flex bg-fire-bush-900'">
       {ingredientWithQuantity.quantity}
       {ingredientWithQuantity.unit}
       &nbsp;
